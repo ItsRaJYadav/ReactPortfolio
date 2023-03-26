@@ -40,13 +40,13 @@ const Contacts = () => {
   };
 
   return (
-    <div className="dark:bg-gray-900 min-h-screen flex flex-col items-center justify-center ">
+    <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center ">
       <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-900 dark:text-gray-100 mt-15">
         <div className="flex flex-col  items-center justify-center">
 
           <h2 className="text-4xl font-bold leading-tight lg:text-5xl mb-7">Let's talk!</h2>
-          
-          <div className="py-6 md:py-0 md:px-6" style={{fontSize: "1.3em"}}>
+
+          <div className="py-6 md:py-0 md:px-6" style={{ fontSize: "1.3em" }}>
 
 
             <div className="space-y-4">
