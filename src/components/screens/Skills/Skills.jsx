@@ -27,7 +27,7 @@ const SkillCard = ({ icon, name }) => {
 const SkillsPage = () => {
     return (
       <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white mt-3 mb-5">My Skills</h1>
+        <h1 className="text-3xl md:text-4xl lg:text-3xl font-medium text-white mt-3 mb-5">My Skills</h1>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
           <motion.div className="w-full md:w-64" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <SkillCard icon={<FaReact color="#61DBFB" />} name="React" />
