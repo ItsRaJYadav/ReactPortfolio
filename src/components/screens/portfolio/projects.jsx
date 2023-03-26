@@ -59,7 +59,7 @@ const Projects = () => {
                             />
                             <div className="p-4">
                                 <div className="flex justify-between items-center">
-                                    <h2 className="text-lg font-medium text-gray-800 dark:text-gray-100">{project.title}</h2>
+                                    <h2 className="text-lg font-medium text-gray-100 dark:text-gray-100">{project.title}</h2>
                                     <div className="flex items-center">
                                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="mr-3 text-gray-400 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100" aria-label="Link to my GitHub profile">
                                             <FontAwesomeIcon icon={faGithub} style={{ fontSize: '1.5em' }} />
