@@ -24,11 +24,12 @@ const NavBar = () => {
     <div>
       <nav className=" px-2 sm:px-4 py-2.5 rounded bg-gray-900">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <NavLink to='/' className="flex items-center" onClick={closeMenu}>
+          <NavLink to='/' className="flex items-center" >
             <img
             src={favicon}
               className="h-6 mr-3 sm:h-9 w-6 sm:w-9"
               alt=" Logo" 
+              onClick={closeMenu}
               
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
@@ -71,6 +72,7 @@ const NavBar = () => {
                   to='/'
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   aria-current="page"
+                  activeClassName="active"
                 >
                   Home
                 </NavLink>
