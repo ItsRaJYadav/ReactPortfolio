@@ -1,66 +1,53 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from './components/screens/Home/Home';
-import Skills from './components/screens/Skills/Skills';
-import About from './components/screens/About/About';
-import Contacts from './components/data/Contacts';
-import Timelines from './components/screens/Timelines/Timelines';
-import Errors from './components/global/Errors';
-import Education from './components/screens/Timelines/Education';
-import Experience from './components/screens/Timelines/Experience';
-import NavBar from './components/global/Nav';
-import Projects from './components/screens/portfolio/projects';
-import Coding from './components/screens/portfolio/Coding';
-import Portfolio from './components/screens/portfolio/portfolio';
-import Achievements from './components/screens/portfolio/Achievements';
-import { FaArrowUp } from 'react-icons/fa';
+import Loader from './components/global/Loader';
+import NavBar from './components/global/Nav'
+import ScrollToTopButton from './components/global/ScrollToTop';
+const Contacts = lazy(() => import('./components/data/Contacts'));
+const HomePage = lazy(() => import('./components/screens/Home/Home'));
+const Skills = lazy(() => import('./components/screens/Skills/Skills'));
+const About = lazy(() => import('./components/screens/About/About'));
+const Timelines = lazy(() => import('./components/screens/Timelines/Timelines'));
+const Errors = lazy(() => import('./components/global/Errors'));
+const Education = lazy(() => import('./components/screens/Timelines/Education'));
+const Experience = lazy(() => import('./components/screens/Timelines/Experience'));
+const Projects = lazy(() => import('./components/screens/portfolio/projects'));
+const Coding = lazy(() => import('./components/screens/portfolio/Coding'));
+const Portfolio = lazy(() => import('./components/screens/portfolio/portfolio'));
+const Achievements = lazy(() => import('./components/screens/portfolio/Achievements'));
 
 function App() {
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+
+
   return (
     <>
+
       <BrowserRouter>
-        <button
-          className="fixed bottom-4 right-4 z-50 bg-blue-500 text-white py-2 px-4 rounded-full shadow-md hover:bg-blue-600"
-          onClick={scrollToTop}
-        >
-          <FaArrowUp className="text-lg" />
-        </button>
-        
         <NavBar />
+        <ScrollToTopButton />
+        <Suspense fallback={<Loader />}>
 
-        <Routes>
-
-          <Route path="/" element={<HomePage />} exact />
-          <Route path="/about" element={<About />} exact />
-          <Route path="/skills" element={<Skills />} exact />
-          <Route path="/contacts" element={<Contacts />} exact />
-
-
-          <Route path="*" element={<Errors />} exact />
-
-          <Route path='/timelines/' element={< Timelines />} >
-            <Route index element={<Experience />} />
-            <Route path='experience' element={<Experience />} />
-            <Route path='education' element={<Education />} />
-
-          </Route>
-          <Route path='/portfolio/' element={< Portfolio />} >
-            <Route index element={<Projects />} />
-            <Route path='projects' element={<Projects />} />
-            <Route path='coding' element={<Coding />} />
-            <Route path='achievement' element={<Achievements />} />
-
-          </Route>
-
-
-
-        </Routes>
-
-
+          
+          <Routes>
+            <Route path="/" element={<HomePage />} exact />
+            <Route path="/about" element={<About />} exact />
+            <Route path="/skills" element={<Skills />} exact />
+            <Route path="/contacts" element={<Contacts />} exact />
+            <Route path="*" element={<Errors />} exact />
+            <Route path='/timelines/' element={<Timelines />} >
+              <Route index element={<Experience />} />
+              <Route path='experience' element={<Experience />} />
+              <Route path='education' element={<Education />} />
+            </Route>
+            <Route path='/portfolio/' element={<Portfolio />} >
+              <Route index element={<Projects />} />
+              <Route path='projects' element={<Projects />} />
+              <Route path='coding' element={<Coding />} />
+              <Route path='achievement' element={<Achievements />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
 
     </>

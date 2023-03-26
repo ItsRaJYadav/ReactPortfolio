@@ -42,7 +42,7 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 ">
             <div className="bg-gray-900 text-white ">
                 <h2 className="text-4xl font-extrabold tracking-tight text-center text-gray-100">My Recent Projects</h2>
             </div>
@@ -61,11 +61,11 @@ const Projects = () => {
                                 <div className="flex justify-between items-center">
                                     <h2 className="text-lg font-medium text-gray-800 dark:text-gray-100">{project.title}</h2>
                                     <div className="flex items-center">
-                                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="mr-3 text-gray-400 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">
+                                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="mr-3 text-gray-400 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100" aria-label="Link to my GitHub profile">
                                             <FontAwesomeIcon icon={faGithub} style={{ fontSize: '1.5em' }} />
                                         </a>
                                         {project.projectUrl && (
-                                            <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" className="text-green-500 dark:text-green-400 hover:text-green-600 dark:hover:text-green-300 cursor-pointer">
+                                            <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" className="text-green-500 dark:text-green-400 hover:text-green-600 dark:hover:text-green-300 cursor-pointer" aria-label="Link to my website ">
                                                 <FontAwesomeIcon icon={faGoogle} style={{ fontSize: '1.5em' }} />
                                             </a>
                                         )}

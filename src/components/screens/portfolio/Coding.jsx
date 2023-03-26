@@ -66,6 +66,7 @@ function CodingProfile() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-300 font-medium mt-2 ml-auto"
+              aria-label="Link to my coding profile"
             >
               <FaExternalLinkAlt className="text-white text-lg" />
             </a>
