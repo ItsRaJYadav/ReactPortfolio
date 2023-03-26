@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader from './components/global/Loader';
 import NavBar from './components/global/Nav'
+import ChatWoot from './components/data/ChatWood';
+
 import ScrollToTopButton from './components/global/ScrollToTop';
 const Contacts = lazy(() => import('./components/data/Contacts'));
 const HomePage = lazy(() => import('./components/screens/Home/Home'));
@@ -25,6 +27,7 @@ function App() {
 
       <BrowserRouter>
         <NavBar />
+     <ChatWoot/>
         <ScrollToTopButton />
         <Suspense fallback={<Loader />}>
 
