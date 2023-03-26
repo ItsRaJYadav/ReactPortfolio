@@ -32,7 +32,7 @@ const NavBar = () => {
               onClick={closeMenu}
               
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
               RaJ Yadav
             </span>
           </NavLink>
