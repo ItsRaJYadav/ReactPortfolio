@@ -42,7 +42,7 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 ">
+        <div className="min-h-screen bg-gray-900 ">
             <div className="bg-gray-900 text-white ">
                 <h2 className="text-4xl font-extrabold tracking-tight text-center text-gray-100">My Recent Projects</h2>
             </div>
@@ -50,7 +50,7 @@ const Projects = () => {
 
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project) => (
-                        <div key={project.id} className="bg-white dark:bg-gray-800 overflow-hidden shadow-md rounded-lg">
+                        <div key={project.id} className="bg-gray-800 overflow-hidden shadow-md rounded-lg">
                             <motion.img
                                 className="w-full h-48 object-cover object-center"
                                 src={project.image}
@@ -71,7 +71,7 @@ const Projects = () => {
                                         )}
                                     </div>
                                 </div>
-                                <hr className="my-4 border-gray-300 dark:border-gray-700" />
+                                <hr className="my-4  dark:border-gray-700" />
                                 <p className="text-gray-700 dark:text-gray-300">{project.description}</p>
                                 <div className="mt-4 flex flex-wrap">
                                     <div className="mr-2 mb-2 py-1 px-2 rounded-md bg-gray-200 text-gray-700 text-sm">{project.tech1}</div>
