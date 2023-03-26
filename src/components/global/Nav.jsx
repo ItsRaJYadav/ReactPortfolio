@@ -3,7 +3,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import favicon from './favicon.ico'
 import './Nav.css'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ const NavBar = () => {
               aria-label="Link to my button"
             >
               
-              <HiOutlineMenuAlt3 className="w-6 h-6" />
+              <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars}  className="w-6 h-6" />
             </button>
           </div>
           <div
@@ -65,14 +66,13 @@ const NavBar = () => {
               } md:block items-center justify-between w-full md:w-auto md:order-1`}
             id="navbar-cta"
           >
-            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <NavLink
                   onClick={closeMenu}
                   to='/'
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   aria-current="page"
-                  activeClassName="active"
                 >
                   Home
                 </NavLink>
