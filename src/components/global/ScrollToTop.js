@@ -51,7 +51,7 @@ const UpArrow = () => {
 
   return (
     <button
-      className="fixed bottom-4 right-4 z-50 bg-blue-500 text-white py-2 px-4 rounded-full shadow-md hover:bg-blue-600"
+      className="fixed bottom-4 left-4 z-50 bg-blue-500 text-white py-2 px-4 rounded-full shadow-md hover:bg-blue-600"
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >
