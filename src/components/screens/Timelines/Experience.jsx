@@ -9,7 +9,7 @@ const Experience = () => {
                     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                         February 2022
                     </time>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-white dark:text-white">
                         Front End Developer @ XYZ Company
                     </h3>
                     <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
@@ -23,7 +23,7 @@ const Experience = () => {
                     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                         March 2023
                     </time>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-white dark:text-white">
                         UI/UX designer in Figma
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -36,7 +36,7 @@ const Experience = () => {
                     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                         April 2022
                     </time>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-white dark:text-white">
                         Content Writer
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -48,7 +48,7 @@ const Experience = () => {
                     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                         April 2022
                     </time>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-white dark:text-white">
                         MERN Stack Developer
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
