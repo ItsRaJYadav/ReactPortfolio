@@ -45,10 +45,10 @@ const Education = () => {
                 </li>
                 <li className="ml-4">
                     <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                    <time className="mb-1 text-sm font-normal leading-none text-white dark:text-white">
                     February 2006-March 2014
                     </time>
-                    <h3 className="text-lg font-semibold dark:text-white">
+                    <h3 className="text-lg font-semibold text-white dark:text-white">
                     Biraul Central School
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -59,5 +59,8 @@ const Education = () => {
         </>
     )
 }
+
+//
+
 
 export default Education
