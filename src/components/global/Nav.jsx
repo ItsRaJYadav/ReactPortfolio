@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import favicon from './favicon.ico'
 import './Nav.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
