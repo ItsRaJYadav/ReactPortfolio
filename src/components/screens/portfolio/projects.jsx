@@ -72,7 +72,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                                 <hr className="my-4  dark:border-gray-700" />
-                                <p className="text-gray-700 dark:text-gray-300">{project.description}</p>
+                                <p className="text-gray-300 dark:text-gray-300">{project.description}</p>
                                 <div className="mt-4 flex flex-wrap">
                                     <div className="mr-2 mb-2 py-1 px-2 rounded-md bg-gray-200 text-gray-700 text-sm">{project.tech1}</div>
                                     <div className="mr-2 mb-2 py-1 px-2 rounded-md bg-gray-200 text-gray-700 text-sm">{project.tech2}</div>
