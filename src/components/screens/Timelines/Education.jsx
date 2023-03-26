@@ -48,7 +48,7 @@ const Education = () => {
                     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                     February 2006-March 2014
                     </time>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-semibold dark:text-white">
                     Biraul Central School
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -59,8 +59,5 @@ const Education = () => {
         </>
     )
 }
-
-//
-
 
 export default Education
