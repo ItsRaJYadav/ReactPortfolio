@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { DiMongodb, DiMysql, DiJavascript1 } from 'react-icons/di';
-import { SiTailwindcss, SiCss3, SiBootstrap, SiPhp, SiThealgorithms, SiMicrosoftoffice, SiCanva } from 'react-icons/si';
+import { SiTailwindcss, SiCss3, SiBootstrap, SiPhp, SiThealgorithms, SiMicrosoftoffice, SiCanva,SiFirebase,SiPostman } from 'react-icons/si';
 import { TbBrandCpp } from 'react-icons/tb';
+import { FcAndroidOs } from 'react-icons/fc';
+import {FaWordpress } from 'react-icons/fa';
 
 
 
@@ -105,6 +107,36 @@ const SkillsPage = () => {
                     whileTap={{ scale: 0.95 }}
                 >
                     <SkillCard icon={<SiPhp color="#777BB4" />} name="PHP" />
+                </motion.div>
+               
+                <motion.div
+                    className="w-64"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <SkillCard icon={<SiFirebase color="#FFCB2B" />} name="FireBase" />
+                </motion.div>
+                
+                <motion.div
+                    className="w-64"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <SkillCard icon={<FcAndroidOs  color="#78C257" />} name="Android" />
+                </motion.div>
+                <motion.div
+                    className="w-64"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <SkillCard icon={<FaWordpress  color="#21759b" />} name="Wordpress" />
+                </motion.div>
+                <motion.div
+                    className="w-64"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <SkillCard icon={<SiPostman  color="#ef5b25" />} name="Postman" />
                 </motion.div>
                 <motion.div
                     className="w-64"
