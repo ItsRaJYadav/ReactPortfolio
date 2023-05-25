@@ -6,6 +6,7 @@ import NavBar from './components/global/Nav'
 import ChatWoot from './components/data/ChatWood';
 import ScrollToTopButton from './components/global/ScrollToTop';
 import Test from './components/test/Test';
+
 const Contacts = lazy(() => import('./components/data/Contacts'));
 const UserData = lazy(() => import('./components/data/UserData'));
 const HomePage = lazy(() => import('./components/screens/Home/Home'));
@@ -21,19 +22,14 @@ const Portfolio = lazy(() => import('./components/screens/portfolio/portfolio'))
 const Achievements = lazy(() => import('./components/screens/portfolio/Achievements'));
 
 function App() {
-
-
   return (
     <>
-
       <BrowserRouter>
         <NavBar />
-        <ChatWoot/>
+        <ChatWoot />
         <ScrollToTopButton />
-        
-        <Suspense fallback={<Loader />}>
 
-          
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<HomePage />} exact />
             <Route path="/user" element={<UserData />} exact />
@@ -56,7 +52,6 @@ function App() {
           </Routes>
         </Suspense>
       </BrowserRouter>
-
     </>
   );
 }
