@@ -67,6 +67,137 @@ const SkillsPage = () => {
           <SkillCard icon={<FaNodeJs color="#3E863D" />} name="Node.js" />
         </motion.div>
         {/* Add the rest of the skill cards */}
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<FaServer color="#F6C915" />} name="Express.js" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<FaPython color="#FFD845" />} name="Python" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<FaHtml5 color="#E34F26" />} name="HTML5" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<DiJavascript1 color="#F0DB4F" />} name="JavaScript" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<DiMysql color="#00758F" />} name="MySQL" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<SiTailwindcss color="#06B6D4" />} name="Tailwind CSS" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<SiCss3 color="#2965F1" />} name="CSS3" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<SiBootstrap color="#7952B3" />} name="Bootstrap" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<SiPhp color="#777BB4" />} name="PHP" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard
+            icon={<SiThealgorithms color="#FF6D05" />}
+            name="Data Structures & Algorithms"
+          />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard
+            icon={<SiMicrosoftoffice color="#D83B01" />}
+            name="Microsoft Office"
+          />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<SiCanva color="#00C4CC" />} name="Canva" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<SiFirebase color="#FFCA28" />} name="Firebase" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<SiPostman color="#FF6C37" />} name="Postman" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard
+            icon={<FcAndroidOs color="#3DDC84" />}
+            name="Android Development"
+          />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard
+            icon={<FaWordpress color="#21759B" />}
+            name="WordPress"
+          />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<TbBrandCpp color="#00599C" />} name="C++" />
+        </motion.div>
       </div>
       <style jsx>{`
         @media only screen and (min-width: 768px) and (max-width: 1024px) {

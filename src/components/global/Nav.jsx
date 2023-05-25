@@ -44,8 +44,13 @@ const NavBar = () => {
           </NavLink>
           <div className="flex md:order-2">
             {isAuthenticated ? (
-              <Link className="" to="/user">
-                <FaUserCircle size={37} className="text-blue-700 hover:text-blue-800 mr-3 md:mr-5" />
+              <Link className="h-12 w-12 mr-5" to="/user">
+                {/* <FaUserCircle size={37} className="text-blue-700 hover:text-blue-800 mr-3 md:mr-5" /> */}
+                <img
+                 src={user && user.picture}
+                 alt=""
+                 style={{ backgroundColor: '#333', borderRadius: '50%' }}
+                  />
               </Link>
             ) : (
               <button

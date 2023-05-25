@@ -32,9 +32,10 @@ function UserTable() {
           </div>
         </div>
         <div className="md:order-1 w-full md:w-3/5">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
-            User Details
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
+          Welcome {user.name}
           </h1>
+         
           <div className="flex flex-col mb-4 md:mb-6">
             <label
               htmlFor="name"
