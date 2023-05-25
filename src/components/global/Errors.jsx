@@ -6,7 +6,8 @@ const Errors = () => {
     <div className=" dark:bg-gray-900 min-h-screen flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
         <h2 className="text-6xl font-extrabold text-gray-800 dark:text-white mb-8">
-          <span className="sr-only">Error</span>404
+          <span className="sr-only">Error 
+          </span>404
         </h2>
         <p className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
           Sorry, we couldn't find this page.

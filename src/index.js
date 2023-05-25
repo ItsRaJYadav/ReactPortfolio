@@ -1,23 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom";
 import './index.css';
-import App from './App';
+import App from "./App";
+import { Auth0Provider } from "@auth0/auth0-react";
 
-
-
-// // Importing the Bootstrap CSS
-// import "../node_modules/react-bootstrap/dist/react-bootstrap";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+ReactDOM.render(
+  <Auth0Provider
+    domain="dev-qwam0pm8hqpp05ts.us.auth0.com"
+    clientId="YaDoPmdpImRqsxaJdLONDolBF4kygbD2"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+    useRefreshTokens
+    cacheLocation="localstorage"
+  >
     <App />
-  </React.StrictMode>
+  </Auth0Provider>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-

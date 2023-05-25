@@ -3,8 +3,11 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader from './components/global/Loader';
 import NavBar from './components/global/Nav'
+import ChatWoot from './components/data/ChatWood';
 import ScrollToTopButton from './components/global/ScrollToTop';
+import Test from './components/test/Test';
 const Contacts = lazy(() => import('./components/data/Contacts'));
+const UserData = lazy(() => import('./components/data/UserData'));
 const HomePage = lazy(() => import('./components/screens/Home/Home'));
 const Skills = lazy(() => import('./components/screens/Skills/Skills'));
 const About = lazy(() => import('./components/screens/About/About'));
@@ -25,18 +28,22 @@ function App() {
 
       <BrowserRouter>
         <NavBar />
+        <ChatWoot/>
         <ScrollToTopButton />
+        
         <Suspense fallback={<Loader />}>
 
           
           <Routes>
             <Route path="/" element={<HomePage />} exact />
+            <Route path="/user" element={<UserData />} exact />
+            <Route path="/test" element={<Test />} exact />
             <Route path="/about" element={<About />} exact />
             <Route path="/skills" element={<Skills />} exact />
             <Route path="/contacts" element={<Contacts />} exact />
             <Route path="*" element={<Errors />} exact />
             <Route path='/timelines/' element={<Timelines />} >
-              <Route index element={<Experience />} />
+              <Route index element={<Education />} />
               <Route path='experience' element={<Experience />} />
               <Route path='education' element={<Education />} />
             </Route>
