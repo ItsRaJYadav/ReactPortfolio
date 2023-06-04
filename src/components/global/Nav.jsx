@@ -5,7 +5,6 @@ import './Nav.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useAuth0 } from "@auth0/auth0-react";
-import { FaUserCircle } from "react-icons/fa";
 
 
 const NavBar = () => {
@@ -24,11 +23,11 @@ const NavBar = () => {
   //active menu
 
   //auth0 fu
-  const { loginWithRedirect, user, isAuthenticated, isLoading, logout } = useAuth0();
+  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
 
   return (
     <div>
-      <nav className=" px-2 sm:px-4 py-2.5  bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
+      <nav className=" px-2 sm:px-4 py-2.5  bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 md: bg-slate-800">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <NavLink to='/' className="flex items-center" >
             <img
@@ -47,14 +46,14 @@ const NavBar = () => {
               <Link className="h-12 w-12 mr-5" to="/user">
                 {/* <FaUserCircle size={37} className="text-blue-700 hover:text-blue-800 mr-3 md:mr-5" /> */}
                 <img
-                 src={user && user.picture}
-                 alt=""
-                 style={{ backgroundColor: '#333', borderRadius: '50%' }}
-                  />
+                  src={user && user.picture}
+                  alt=""
+                  style={{ backgroundColor: '#333', borderRadius: '50%' }}
+                />
               </Link>
             ) : (
               <button
-                onClick={() => loginWithRedirect()}
+                onClick={() => { loginWithRedirect(); handle(); }}
                 type="button"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
@@ -68,10 +67,11 @@ const NavBar = () => {
                 closeMenu();
               }}
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hidden md:inline"
             >
               Hire Me
             </button>
+
 
             <button
               type="button"

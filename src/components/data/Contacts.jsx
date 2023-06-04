@@ -4,9 +4,11 @@ import { AiOutlineMail } from "react-icons/ai";
 import { ImLocation } from "react-icons/im";
 import Swal from 'sweetalert2';
 import { useAuth0 } from "@auth0/auth0-react";
+import {useNavigate} from 'react-router-dom'
 
 const Contacts = () => {
-  const { user, isAuthenticated } = useAuth0();
+  const { user, isAuthenticated,loginWithRedirect } = useAuth0();
+  const navigate = useNavigate();
 
   const initialState = {
     name: isAuthenticated ? user.name : '',
@@ -19,6 +21,7 @@ const Contacts = () => {
     e.preventDefault();
     if (!isAuthenticated) {
       Swal.fire('Please Login', 'Please login to contact us.', 'info');
+      navigate(loginWithRedirect());
       return;
     }
 
@@ -42,6 +45,7 @@ const Contacts = () => {
       } else {
         Swal.fire('Error', 'An error occurred while submitting the form.', 'error');
       }
+
     } catch (error) {
       console.error(error);
       Swal.fire('Error', 'An error occurred while submitting the form.', 'error');

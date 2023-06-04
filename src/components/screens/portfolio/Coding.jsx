@@ -52,12 +52,12 @@ function CodingProfile() {
   });
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 text-white py-8 px-6">
+    <div className="bg-gray-900 text-white py-8 px-6">
       <h2 className="text-3xl font-bold mb-8">Coding Profile</h2>
       {trail.map((animationProps, index) => (
         <animated.div key={index} className="flex flex-row items-center justify-between mb-4" style={animationProps}>
           {codingProfiles[index].icon}
-          <div className="bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 flex flex-col w-full py-2 px-4 rounded-lg shadow-md">
+          <div className="bg-gray-700  flex flex-col w-full py-2 px-4 rounded-lg shadow-md">
             <p className="text-lg font-medium truncate mb-2">{codingProfiles[index].name}</p>
             <div className="flex flex-row items-center text-green-500">
               <IoMdCheckmarkCircleOutline className="text-lg mr-2" />

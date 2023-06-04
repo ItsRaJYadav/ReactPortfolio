@@ -15,7 +15,7 @@ const Timelines = () => {
   })
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 min-h-screen flex flex-col">
+    <div className="bg-gray-900  min-h-screen flex flex-col">
       <animated.nav style={fade} className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
