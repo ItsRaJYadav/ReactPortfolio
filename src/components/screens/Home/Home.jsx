@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import { useSpring, animated } from 'react-spring';
-
+import { useAuth0 } from '@auth0/auth0-react'
 import pic from './Hero.webp'
 import Footer from '../../global/Footer';
+import Swal from 'sweetalert2'
 
 
 function HomePage() {
+    const { isAuthenticated } = useAuth0();
     const navigate = useNavigate();
     const handleClick = () => navigate('/contacts');
 
@@ -139,8 +141,17 @@ function HomePage() {
 
                             <animated.button style={buttonAnimation}
                                 onClick={() => {
+                                    if (!isAuthenticated) {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'you are not authenticated',
+                                            text: 'Please log in to view the resume.'
+                                        });
+                                        return;
+                                    }
                                     window.open("https://drive.google.com/file/d/1i5f3D4fO7GSY_LUI53y42_eFsJ2iEzXk/view?usp=sharing");
                                 }}
+
                                 className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
                             >
                                 View Resume
