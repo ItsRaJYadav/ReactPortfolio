@@ -44,27 +44,14 @@ function HomePage() {
         delay: 1000
     });
 
-    const bounce = useSpring({
-        from: { transform: 'scale(1)' },
-        to: { transform: 'scale(1.1)' },
-        config: { duration: 1000 },
-        reset: true,
-        reverse: true,
-        loop: true,
-        delay: 2000
-    });
-
+    
     const buttonAnimation = useSpring({
         from: { opacity: 0, transform: 'translateY(40px)' },
         to: { opacity: 1, transform: 'translateY(0)' },
         config: { duration: 500, delay: 200 },
     });
 
-    const imageAnimation = useSpring({
-        from: { transform: 'scale(0.8) rotate(-45deg)', opacity: 0 },
-        to: { transform: 'scale(1) rotate(0deg)', opacity: 1 },
-        config: { tension: 200, friction: 10 },
-    });
+    
 
     //preload the picture
     useEffect(() => {
@@ -163,6 +150,7 @@ function HomePage() {
 
                 </div>
             </div>
+            
 
             <Footer />
         </>

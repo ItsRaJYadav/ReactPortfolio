@@ -1,169 +1,210 @@
-import React, { useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import favicon from './favicon.ico'
-import './Nav.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { FiX, FiMenu } from 'react-icons/fi';
+import { FaRProject } from 'react-icons/fa';
+import { HiHome, HiUserCircle } from 'react-icons/hi';
+import { SiAboutdotme } from 'react-icons/si';
+import { BsStack } from 'react-icons/bs';
+import { MdDeveloperMode, MdViewTimeline, MdOutlineContactPhone, MdLogin } from 'react-icons/md';
 import { useAuth0 } from "@auth0/auth0-react";
 
+const Header = () => {
+  const location = useLocation();
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-const NavBar = () => {
-  const navigate = useNavigate();
-  const handle = () => navigate('/contacts')
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const { user, isAuthenticated } = useAuth0();
 
-  //active menu
 
-  //auth0 fu
-  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
 
   return (
-    <div>
-      <nav className=" px-2 sm:px-4 py-2.5  bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 md: bg-slate-800">
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
+    <header className="bg-gray-900 text-white">
+      <nav className="container mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-row items-center justify-between">
+
           <NavLink to='/' className="flex items-center" >
             <img
               src={favicon}
               className="h-6 mr-3 sm:h-9 w-6 sm:w-9"
               alt=" Logo"
-              onClick={closeMenu}
+
 
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
               RaJ Yadav
             </span>
           </NavLink>
-          <div className="flex md:order-2">
-            {isAuthenticated ? (
-              <Link className="h-12 w-12 mr-5" to="/user">
-                {/* <FaUserCircle size={37} className="text-blue-700 hover:text-blue-800 mr-3 md:mr-5" /> */}
-                <img
-                  src={user && user.picture}
-                  alt=""
-                  style={{ backgroundColor: '#333', borderRadius: '50%' }}
-                />
-              </Link>
-            ) : (
-              <button
-                onClick={() => { loginWithRedirect(); handle(); }}
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Login
-              </button>
-            )}
-
+          <div className="md:hidden ml-24">
             <button
-              onClick={() => {
-                handle();
-                closeMenu();
-              }}
-              type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hidden md:inline"
+              className="text-white focus:outline-none"
+              onClick={toggleMobileMenu}
             >
-              Hire Me
+              {isMobileMenuOpen ? <FiX /> : <FiMenu />}
             </button>
-
-
-            <button
-              type="button"
-              className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-cta"
-              aria-expanded={isMenuOpen}
-              onClick={toggleMenu}
-              aria-label="Toggle navigation menu"
-            >
-              <FontAwesomeIcon
-                icon={isMenuOpen ? faTimes : faBars}
-                className="w-6 h-6"
-              />
-            </button>
-          </div>
-
-          <div
-            className={`${isMenuOpen ? 'block' : 'hidden'
-              } md:block items-center justify-between w-full md:w-auto md:order-1`}
-            id="navbar-cta"
-          >
-            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0   dark:border-gray-700">
-              <li>
-                <NavLink
-                  onClick={closeMenu}
-                  to='/'
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  aria-current="page"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to='/about'
-                  onClick={closeMenu}
-                  activeClassName="active"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to='/skills'
-                  onClick={closeMenu}
-                  activeClassName="active"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Skills
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={closeMenu}
-                  activeClassName="active"
-                  to='/timelines'
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Timelines
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={closeMenu}
-                  activeClassName="active"
-                  to='/portfolio'
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Portfolio
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={closeMenu}
-                  activeClassName="active"
-                  to='/contacts'
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Contacts
-                </NavLink>
-              </li>
-
-
-            </ul>
           </div>
         </div>
+
+        <ul className="hidden md:flex space-x-4 mt-4 md:mt-0 mx-auto text-lg border-gray-100 rounded-lg">
+          <li>
+            <Link
+              to="/"
+              className={`py-2 pl-3 pr-4 text-gray-100 rounded cursor-pointer ${location.pathname === '/' ? 'bg-blue-500' : ''
+                }`}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className={`py-2 pl-3 pr-4 text-gray-100 rounded cursor-pointer ${location.pathname === '/about' ? 'bg-blue-500' : ''
+                }`}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/skills"
+              className={`py-2 pl-3 pr-4 text-gray-100 rounded cursor-pointer ${location.pathname === '/skills' ? 'bg-blue-500' : ''
+                }`}
+            >
+              Skills
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/timelines"
+              className={`py-2 pl-3 pr-4 text-gray-100 rounded cursor-pointer ${location.pathname === '/timelines' ? 'bg-blue-500' : ''
+                }`}
+            >
+              Timelines
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/portfolio"
+              className={`py-2 pl-3 pr-4 text-gray-100 rounded cursor-pointer ${location.pathname === '/portfolio' ? 'bg-blue-500' : ''
+                }`}
+            >
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contacts"
+              className={`py-2 pl-3 pr-4 text-gray-100 rounded cursor-pointer ${location.pathname === '/contacts' ? 'bg-blue-500' : ''
+                }`}
+            >
+              Contact
+            </Link>
+          </li>
+
+          {isAuthenticated ? (
+            <li>
+              <Link
+                to="/user"
+                className={`py-2 pl-3 pr-4 text-gray-100 rounded cursor-pointer ${location.pathname === '/user' ? 'bg-blue-500' : ''
+                  }`}
+              >
+                {user?.name}
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link
+                to="/login"
+                className={`py-2 pl-3 pr-4 text-gray-100 rounded cursor-pointer ${location.pathname === '/login' ? 'bg-blue-500' : ''
+                  }`}
+              >
+                Login
+              </Link>
+            </li>
+          )}
+        </ul>
+
+
+        {isMobileMenuOpen && (
+          <div className={`fixed top-0 left-0 w-full h-full bg-black z-40 backdrop-filter backdrop-blur-lg bg-opacity-70`} />
+
+        )}
+
+        <div
+          className={`fixed top-0 right-0 h-full w-64 bg-gray-800 transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            } z-50`}
+        >
+          <button
+            className="text-white absolute top-4 right-4 focus:outline-none"
+            onClick={toggleMobileMenu}
+          >
+            <FiX />
+          </button>
+          {/* off canvas */}
+          <ul className="flex flex-col items-start space-y-4  p-4">
+            
+              <FaRProject className="text-4xl text-blue-600 flex justify-center items-center ml-16 mb-1" />
+            
+
+            <li className="flex items-center">
+              <HiHome size={18} className="mr-5" />
+              <Link to="/" onClick={closeMobileMenu}>Home</Link>
+            </li>
+            <li className="flex items-center">
+              <SiAboutdotme size={18} className="mr-5" />
+              <Link to="/about" onClick={closeMobileMenu}>About</Link>
+            </li>
+            <li className="flex items-center">
+              <BsStack size={18} className="mr-5" />
+              <Link to="/skills" onClick={closeMobileMenu}>Skills</Link>
+            </li>
+            <li className="flex items-center">
+              <MdDeveloperMode size={18} className="mr-5" />
+              <Link to="/portfolio" onClick={closeMobileMenu}>Portfolio</Link>
+            </li>
+            <li className="flex items-center">
+              <MdViewTimeline size={18} className="mr-5" />
+              <Link to="/timelines" onClick={closeMobileMenu}>Timelines </Link>
+            </li>
+            <li className="flex items-center">
+              <MdOutlineContactPhone size={18} className="mr-5" />
+              <Link to="/contacts" onClick={closeMobileMenu}>Contact</Link>
+            </li>
+            {isAuthenticated ? (
+              <li className="flex items-center">
+                <HiUserCircle size={25} className="mr-2" />
+
+                <Link
+                  to="/user"
+                  className="pl-3 pr-4 text-gray-100 rounded cursor-pointer " onClick={closeMobileMenu}
+                >
+                  {user?.name}
+                </Link>
+              </li>
+            ) : (
+              <li className="flex items-center">
+                <MdLogin size={18} className="mr-2" />
+
+                <Link
+                  to="/login"
+                  className=" pl-3 pr-4 text-gray-100 rounded cursor-pointer " onClick={closeMobileMenu}
+
+                >
+                  Login
+                </Link>
+              </li>
+            )}
+          </ul>
+        </div>
       </nav>
+    </header>
+  );
+};
 
-
-    </div>
-  )
-}
-
-export default NavBar
+export default Header;
