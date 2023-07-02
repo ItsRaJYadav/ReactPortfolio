@@ -4,7 +4,6 @@ import {
   FaReact,
   FaNodeJs,
   FaServer,
-  FaPython,
   FaHtml5,
 } from "react-icons/fa";
 import { DiMongodb, DiMysql, DiJavascript1 } from "react-icons/di";
@@ -12,15 +11,12 @@ import {
   SiTailwindcss,
   SiCss3,
   SiBootstrap,
-  SiPhp,
   SiThealgorithms,
   SiMicrosoftoffice,
-  SiCanva,
-  SiFirebase,
   SiPostman,
+  SiNextdotjs
 } from "react-icons/si";
 import { FcAndroidOs } from "react-icons/fc";
-import { FaWordpress } from "react-icons/fa";
 import { TbBrandCpp } from "react-icons/tb";
 
 const SkillCard = ({ icon, name }) => {
@@ -79,21 +75,7 @@ const SkillsPage = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <SkillCard icon={<FaPython color="#FFD845" />} name="Python" />
-        </motion.div>
-        <motion.div
-          className="w-64"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <SkillCard icon={<FaHtml5 color="#E34F26" />} name="HTML5" />
-        </motion.div>
-        <motion.div
-          className="w-64"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <SkillCard icon={<DiJavascript1 color="#F0DB4F" />} name="JavaScript" />
+          <SkillCard icon={<SiNextdotjs color="#000000" />} name="Next.Js" />
         </motion.div>
         <motion.div
           className="w-64"
@@ -114,7 +96,40 @@ const SkillsPage = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
+          <SkillCard
+            icon={<SiThealgorithms color="#FF6D05" />}
+            name="Data Structures"
+          />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<TbBrandCpp color="#00599C" />} name="C++" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<FaHtml5 color="#E34F26" />} name="HTML5" />
+        </motion.div>
+
+
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           <SkillCard icon={<SiCss3 color="#2965F1" />} name="CSS3" />
+        </motion.div>
+        <motion.div
+          className="w-64"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <SkillCard icon={<DiJavascript1 color="#F0DB4F" />} name="JavaScript" />
         </motion.div>
         <motion.div
           className="w-64"
@@ -123,23 +138,9 @@ const SkillsPage = () => {
         >
           <SkillCard icon={<SiBootstrap color="#7952B3" />} name="Bootstrap" />
         </motion.div>
-        <motion.div
-          className="w-64"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <SkillCard icon={<SiPhp color="#777BB4" />} name="PHP" />
-        </motion.div>
-        <motion.div
-          className="w-64"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <SkillCard
-            icon={<SiThealgorithms color="#FF6D05" />}
-            name="Data Structures & Algorithms"
-          />
-        </motion.div>
+
+
+
         <motion.div
           className="w-64"
           whileHover={{ scale: 1.05 }}
@@ -150,20 +151,8 @@ const SkillsPage = () => {
             name="Microsoft Office"
           />
         </motion.div>
-        <motion.div
-          className="w-64"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <SkillCard icon={<SiCanva color="#00C4CC" />} name="Canva" />
-        </motion.div>
-        <motion.div
-          className="w-64"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <SkillCard icon={<SiFirebase color="#FFCA28" />} name="Firebase" />
-        </motion.div>
+
+        
         <motion.div
           className="w-64"
           whileHover={{ scale: 1.05 }}
@@ -178,26 +167,11 @@ const SkillsPage = () => {
         >
           <SkillCard
             icon={<FcAndroidOs color="#3DDC84" />}
-            name="Android Development"
+            name="Android Dev"
           />
         </motion.div>
-        <motion.div
-          className="w-64"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <SkillCard
-            icon={<FaWordpress color="#21759B" />}
-            name="WordPress"
-          />
-        </motion.div>
-        <motion.div
-          className="w-64"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <SkillCard icon={<TbBrandCpp color="#00599C" />} name="C++" />
-        </motion.div>
+        
+
       </div>
       <style jsx>{`
         @media only screen and (min-width: 768px) and (max-width: 1024px) {

@@ -8,7 +8,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from 'react-router-dom';
 
 const Contacts = () => {
-  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
   const navigate = useNavigate();
 
   const initialState = {
@@ -23,32 +23,38 @@ const Contacts = () => {
     e.preventDefault();
     if (!isAuthenticated) {
       Swal.fire('Please Login', 'Please login to contact us.', 'info');
-      navigate(loginWithRedirect());
+      navigate('/login');
       return;
     }
-
-    try {
-      setIsLoading(true);
-      const response = await fetch('https://formspree.io/f/mzbqajee', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setFormData(initialState);
-        Swal.fire('Success', 'Form submitted successfully. We will get back to you soon!', 'success');
-      } else {
+    if (formData.message === '') {
+      Swal.fire('Error', 'Message field is empty.', 'error');
+      return;
+    }
+    else{
+      
+      try {
+        setIsLoading(true);
+        const response = await fetch('https://formspree.io/f/mzbqajee', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        if (response.ok) {
+          setFormData(initialState);
+          Swal.fire('Success', 'Form submitted successfully. We will get back to you soon!', 'success');
+        } else {
+          Swal.fire('Error', 'An error occurred while submitting the form.', 'error');
+        }
+  
+      } catch (error) {
+        console.error(error);
         Swal.fire('Error', 'An error occurred while submitting the form.', 'error');
+      } finally {
+        setIsLoading(false);
       }
-
-    } catch (error) {
-      console.error(error);
-      Swal.fire('Error', 'An error occurred while submitting the form.', 'error');
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -88,7 +94,6 @@ const Contacts = () => {
                 Full Name
               </label>
               <input
-                required
                 name="name"
                 type="text"
                 placeholder="Enter full name"
@@ -102,7 +107,7 @@ const Contacts = () => {
                 Email
               </label>
               <input
-                required
+                
                 name="email"
                 type="email"
                 className="w-full p-3 rounded bg-gradient-to-b from-gray-900 to-gray-600 text-gray-100"
@@ -117,7 +122,7 @@ const Contacts = () => {
                 Message
               </label>
               <textarea
-                required
+                
                 id="message"
                 rows="3"
                 className="w-full p-5 rounded bg-gradient-to-b from-gray-900 to-gray-600 text-gray-100"

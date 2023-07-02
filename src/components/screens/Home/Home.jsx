@@ -73,21 +73,21 @@ function HomePage() {
                         Hi, My Name is <span style={{ color: '#69B4FF' }}>RaJ</span>
                     </animated.h1>
 
-                    <animated.p style={fadeIn} className="text-2xl text-gray-300 mb-8 text-center">
+                    <animated.p style={fadeIn} className="text-2xl text-gray-100 mb-8 text-center">
                         I'm a developer with experience in ReactJS, Tailwind CSS, and Bootstrap.
                     </animated.p>
                     <div className="flex flex-wrap justify-center mb-4">
-                        <animated.span style={fadeInUp} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-4">
+                        <animated.span style={fadeInUp} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2 mb-4">
                             Full-stack Developer
                         </animated.span>
-                        <animated.span style={fadeInUp} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-4">
+                        <animated.span style={fadeInUp} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2 mb-4">
                             MERN Stack
                         </animated.span>
 
-                        <animated.span style={fadeInUp} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-4">
+                        <animated.span style={fadeInUp} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2 mb-4">
                             React Developer
                         </animated.span>
-                        <animated.span style={fadeInUp} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-4">
+                        <animated.span style={fadeInUp} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2 mb-4">
                             BackEnd Developer
                         </animated.span>
 
@@ -136,7 +136,7 @@ function HomePage() {
                                         });
                                         return;
                                     }
-                                    window.open("https://drive.google.com/file/d/1i5f3D4fO7GSY_LUI53y42_eFsJ2iEzXk/view?usp=sharing");
+                                    window.open("https://drive.google.com/file/d/19mgORLUfZys0PWXEP1yv1_lKWNlamKWD/view?usp=sharing");
                                 }}
 
                                 className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"

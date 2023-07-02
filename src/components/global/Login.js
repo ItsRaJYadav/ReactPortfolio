@@ -10,8 +10,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-10">
-      <div className="flex flex-col items-center mt-2">
+    <div className="flex flex-col items-center justify-center py-10  ">
+      <div className="flex flex-col items-center mt-2 ">
         <button
           className="w-full px-4 py-2 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none"
           onClick={() => handleLogin()}

@@ -46,7 +46,7 @@ const Header = () => {
               className="text-white focus:outline-none"
               onClick={toggleMobileMenu}
             >
-              {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+              {isMobileMenuOpen ? <FiX size={30} /> : <FiMenu size={30}/>}
             </button>
           </div>
         </div>
@@ -144,7 +144,7 @@ const Header = () => {
             className="text-white absolute top-4 right-4 focus:outline-none"
             onClick={toggleMobileMenu}
           >
-            <FiX />
+            <FiX  size={35}/>
           </button>
           {/* off canvas */}
           <ul className="flex flex-col items-start space-y-4  p-4">
