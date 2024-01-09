@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import * as React from 'react';
@@ -51,6 +52,7 @@ export const metadata: Metadata = {
     },
   ],
 };
+const GTM_ID = process.env.NEXT_PUBLIC_GTM !== undefined ? process.env.NEXT_PUBLIC_GTM : '';
 
 export default function RootLayout({
   children,
@@ -58,17 +60,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+    <>
+      <html>
+        
         <body>
           {/* <StarBackground /> */}
-          <Header />
-          <WhatsAppChatButton phoneNumber='' />
-          {children}
-          <Footer />
-          <Analytics mode='production' />
+          <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+            <Header />
+            <WhatsAppChatButton phoneNumber='' />
+            {children}
+            <Footer />
+            <Analytics mode='production' />
+          </ThemeProvider>
+          <GoogleTagManager gtmId={GTM_ID} />
         </body>
-      </ThemeProvider>
-    </html>
+      </html>
+    </>
   );
 }
