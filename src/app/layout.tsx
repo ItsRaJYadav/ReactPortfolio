@@ -8,9 +8,8 @@ import '@/styles/colors.css';
 
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Navbar';
-// import StarBackground from '@/components/layout/StarBackground';
-import WhatsAppChatButton from '@/components/layout/WhatsApp';
 
+// import WhatsAppChatButton from '@/components/layout/WhatsApp';
 import { siteConfig } from '@/constant/config';
 import { ThemeProvider } from '@/utils/ThemeProvider';
 
@@ -67,7 +66,6 @@ export default function RootLayout({
           {/* <StarBackground /> */}
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
             <Header />
-            <WhatsAppChatButton phoneNumber='' />
             {children}
             <Footer />
             <Analytics mode='production' />
