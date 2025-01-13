@@ -10,29 +10,36 @@ import {
 
 const experienceData = [
   {
-    date: 'Aug 2023 to Present',
-    role: 'Full Stack Engineer',
-    company: 'Flavum HealthTech Pvt. Ltd.',
-    companyLink: 'https://www.flavumhealth.com/',
+    date: 'Feb 2024 – Present',
+    role: 'Backend Engineer',
+    company: 'Bidinn',
+    location: 'Noida, India',
     tasks: [
-      `Engineered a robust backend architecture from scratch using Node.js, Express.js, and MongoDB.`,
-      `Delivered a 300% surge in concurrent user capacity and empowered the system to process 35k-40k requests per minute.`,
-      'Applied advanced caching techniques to reduce 35% of database queries and improve response time by 78% .',
-      'Implemented security measures and data protection protocols to prevent data breaches.',
-      'Integrated over 30+ components in React.js and Redux enhancing server-side logic by implementing effective lazy loading strategies for optimized performance.',
+      'Designed and implemented scalable backend architecture using NestJS, TypeORM, and MySQL, enabling efficient handling of high traffic and optimized database queries.',
+      'Improved application performance by integrating Redis caching, reducing database load by 35% and enhancing API response times by 68%.',
+      'Developed secure authentication and role-based authorization mechanisms using JWT, Passport.js, and @casl/ability to enforce fine-grained access control.',
+      'Integrated BullMQ for efficient background job processing and scheduling, cron jobs for periodic tasks, along with bull-board for real-time job monitoring.',
+      'Built a robust file management system by integrating AWS S3 for file uploads and secure media storage.',
+      'Enhanced real-time features like notifications and live updates using Socket.IO with Redis adapter for scalability.',
+      'Integrated Razorpay API for payments and MSG91 API for notifications, enhancing communication and transaction workflows.',
+      'Automated testing and quality assurance using Jest, Supertest, and Sonar Scanner, ensuring robust, reliable, and maintainable code.',
+      'Developed interactive API documentation with Swagger, improving developer onboarding and API usability.',
+      'Implemented Prometheus, Grafana, Loki, and Sentry for real-time performance monitoring, system metrics tracking, centralized logging, and error tracking.',
+      'Improved developer productivity by leveraging tools like Husky, lint-staged, Prettier, and release-it for pre-commit checks, consistent code formatting, and streamlined release management.',
     ],
   },
   {
-    date: 'Feb 2023 to July 2023',
-    role: 'Node.js Developer Intern',
-    company: 'QuickEat Delivery Services LLP',
-    companyLink: 'https://quickeat.in',
+    date: 'Jan 2023 – Jan 2024',
+    role: 'Full-Stack Engineer',
+    company: 'Flavum Healthtech',
+    location: 'New Delhi',
     tasks: [
-      'Created a secure admin dashboard with Node.js, MongoDB, and REST API, integrating Role-based Access Control (RBAC)',
-      'Implemented optimized RESTful API techniques, reducing direct API calls by 30% and cutting response time by 25% through advanced indexing and query optimization',
-      'Achieved a 40% decrease in data breaches while improving overall system efficiency',
-      'Streamlined data management processes, enhancing security and performance of the system',
-      'Developed GraphQL APIs using Node.js and Apollo Server.',
+      'Developed web applications using React.js and Tailwind CSS, improving site load time by 20% while ensuring a responsive user experience.',
+      'Collaborated with design and product teams to integrate APIs, resulting in a 15% increase in feature usability.',
+      'Participated in code reviews, optimizing code quality and reducing bugs by 30%.',
+      'Ensured code quality and stability by writing and executing tests, helping to catch bugs early and maintain robust application performance.',
+      'Integrated Zoho CRM and other tools for lead generation tracking and used Zoho Career Site to streamline the hiring pipeline.',
+      'Produced documentation for new features, facilitating a smoother handover process and reducing onboarding time by 15%.',
     ],
   },
 ];
@@ -64,18 +71,10 @@ const Experience = () => {
                   <span className='ml-4 flex items-center'>
                     <FaLaptopCode className='mr-2 inline-block text-green-400' />{' '}
                     {experience.role}
-                    <a
-                      href={experience.companyLink}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='ml-3 text-white'
-                    >
-                      <FaExternalLinkAlt className='ml-1 inline-block text-gray-400' />
-                    </a>
                   </span>
                 </time>
-                <h3 className='ml-9 text-lg font-semibold text-white dark:text-white'>
-                  {experience.company}
+                <h3 className='ml-9 text-lg font-semibold text-gray:800 dark:text-white'>
+                  {experience.company} <span className='text-gray-400'>({experience.location})</span>
                 </h3>
                 <ul className='mt-2 list-disc pl-8 text-gray-800 dark:text-gray-100'>
                   {experience.tasks.map((task, taskIndex) => (
