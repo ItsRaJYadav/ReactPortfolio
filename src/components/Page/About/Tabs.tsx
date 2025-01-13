@@ -70,16 +70,17 @@ const AboutContent: React.FC = () => {
 const ExperienceContent: React.FC = () => {
   const experienceData = [
     {
-      company: 'Flavum HealthTech',
-      position: 'FullStack Engineer',
-      date: 'Aug 2023 - Present',
+      company: 'Bidinn',
+      position: 'Backend Engineer',
+      date: 'Feb 2024 - Present',
     },
     {
-      company: 'QuickEat Delivery Services',
-      position: 'Backend Developer',
-      date: 'Jan 2023 - July 2023',
+      company: 'Flavum HealthTech',
+      position: 'FullStack Engineer',
+      date: 'Jan 2023 - Jan 2024',
     },
   ];
+
   return (
     <div className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-6 shadow-teal-500">
       <h2 className="text-3xl font-semibold mb-4 text-center">Experience</h2>
